@@ -3,3 +3,12 @@ Theme Name: The Hall
 Author: Ben Ringia
 
 */
+
+body {
+    background: #e7e7e7;
+}
+
+header {
+    background:#fff;
+    height: 100px;
+}
