@@ -4,11 +4,175 @@ Author: Ben Ringia
 
 */
 
-body {
-    background: #e7e7e7;
+@media(min-width: 768px) {
+    body {
+        margin-left: 220px;
+    }
 }
 
 /* header {
     background:#fff;
     height: 100px;
 } */
+.logo-container {
+    text-align: center;
+}
+header {
+    width: 220px;
+    position: relative;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background: #FAFAFA; 
+    border-right: 1px solid #e6e6e6; 
+    padding: 20px 20px;
+  }
+  @media (min-width: 768px) {
+    header {
+      min-height: 100vh;
+    }
+  }
+  @media (max-width: 768px) {
+    .site-header {
+      left: -100%;
+      overflow: hidden;
+      height: 100%;
+      padding: 0;
+      -webkit-transition: all 0.15s ease-in-out;
+      -o-transition: all 0.15s ease-in-out;
+      transition: all 0.15s ease-in-out;
+    }
+    header.active {
+      display: block;
+      max-height: 100%;
+      overflow: auto;
+    }
+    .links {
+      margin: 0px 15px;
+    }
+    
+  }
+  .site-header.js-show {
+    left: 0;
+  }
+
+  .navigation {
+      padding: 0;
+    border-top: 1px solid #dddd;
+  }
+ 
+  .navigation li {
+      padding: 10px 0;
+      list-style: none;
+  }
+  .navigation a {
+      color: #333;
+      font-size: 15px;
+  }
+  .nav-header {
+    display: none;
+    padding: 10px 10px;
+  }
+  .navbar-nav {
+      padding: 10px 0;
+      border-top: 1px solid #dddd;
+      border-bottom: 1px solid #dddd;
+  }
+
+
+
+  /*--------------------------------------------------
+  Site-menu
+--------------------------------------------------*/
+.menu-container {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background: #FAFAFA;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #e6e6e6;
+    display: none;
+    z-index: 9;
+}
+@media(max-width: 768px) {
+    .menu-container {
+        display: block;
+    }
+}
+.c-site-menu {
+	position: relative;
+	display: block;
+	color: #fafafa;
+	font-size: 1rem;
+	text-align: center;
+	text-decoration: none;
+}
+
+.c-site-menu-box {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+}
+
+.c-site-menu-inner {
+	position: relative;
+	display: block;
+	width: inherit;
+	height: 4px;
+	background-color: #333;
+}
+
+.c-site-menu-inner::after,
+.c-site-menu-inner::before {
+	position: absolute;
+	content: "";
+	display: block;
+	width: 100%;
+	height: 4px;
+	background-color: #333;
+	-webkit-transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out;
+}
+
+.c-site-menu-text {
+	margin: 4px 0 0;
+}
+
+.c-site-menu-inner::before {
+	top: -8px;
+}
+
+.c-site-menu-inner::after {
+	bottom: -8px;
+}
+
+.c-site-menu.js-active .c-site-menu-inner {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.c-site-menu.js-active .c-site-menu-inner::before {
+	top: 0;
+	-webkit-transform: rotate(-40deg);
+	transform: rotate(-40deg);
+}
+
+.c-site-menu.js-active .c-site-menu-inner::after {
+	bottom: 0;
+	-webkit-transform: rotate(40deg);
+	transform: rotate(40deg);
+}
+  
+  
