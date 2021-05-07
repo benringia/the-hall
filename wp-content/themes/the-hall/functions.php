@@ -31,9 +31,16 @@ add_action('wp_enqueue_scripts', 'load_stylesheets');
     }
     add_action('wp_enqueue_scripts', 'load_js');
 
+      function load_bootstrap_js() {
+        wp_register_script('bootstrapjs', get_template_directory_uri() . '/js/bootstrap.min.js', '', 1, true);
+        wp_enqueue_script('bootstrapjs');
+    }
+    add_action('wp_enqueue_scripts', 'load_bootstrap_js');
+
 
     add_theme_support('menus');
     add_theme_support('post-thumbnails');
+    
 
     register_nav_menus(
             [
@@ -47,5 +54,26 @@ add_action('wp_enqueue_scripts', 'load_stylesheets');
 
 
 
+    function register_navwalker(){
+        require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+    }
+    add_action( 'after_setup_theme', 'register_navwalker' );
+
+
+    register_default_headers( array(
+        'kami-logo' => array(
+            'url'   => get_stylesheet_directory_uri() . '/images/hambleton-hall-logo.svg',
+            'thumbnail_url' => get_stylesheet_directory_uri() . '/images/hambleton-hall-logo.svg',
+            'description'   => __( 'Kami Logo', 'fun' )
+        )
+    ));
+    
+    add_theme_support( 'custom-header', array(
+        'default-image'   => get_stylesheet_directory_uri() . '/images/hambleton-hall-logo.svg',
+        'width'           => 120,
+        'height'          => 120,
+        'header-selector' => '.site-title a',
+        'header-text'     => false
+    ) );
 
 ?>
