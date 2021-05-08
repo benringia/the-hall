@@ -45,26 +45,12 @@
             
         <?php endwhile; endif;?>
            
-        </div>
+        </div> <!--Card end-->
+        <?php if( is_active_sidebar('page-sidebar') ) : ?>
+            <?php dynamic_sidebar('page-sidebar');?>
+        <?php endif; ?>
             
-    </div>
-
-  
-
-
-
-
-
-    <!-- <div class="col-md-6">
-                <div class="card w-75" style="width: 18rem;">
-                    <img class="card-img-top" src="<?php echo get_template_directory_uri(); ?>/images/the-house-section-1.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php the_title(); ?></h5>
-                        <p class="card-text"> <?php the_excerpt() ?></p>
-                        <a href="<?php the_permalink() ?>" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div> -->
+    </div> <!--container end-->
 </main>
 
 

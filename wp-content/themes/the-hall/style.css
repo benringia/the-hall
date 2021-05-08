@@ -63,16 +63,27 @@ header {
   .site-header.js-show {
     left: 0;
   }
+  @media (max-width: 552px) {
+    .site-header.js-show {
+        width: 100%;
+    }
+  }
 
   .navigation {
       padding: 0;
     border-top: 1px solid #dddd;
+  }
+  @media (max-width: 780px) {
+    .navigation {
+        padding: 20px;
+    }
   }
  
   .navigation li {
       padding: 10px 0;
       list-style: none;
   }
+
   .navigation a {
       color: #333;
       font-size: 15px;
@@ -87,13 +98,24 @@ header {
       border-bottom: 1px solid #dddd;
   }
 
+  @media(max-width: 552px) {
+    .navigation li {
+        padding: 15px 0;
+        border-bottom: 1px solid #ddd;
+    }
+    .navbar-nav {
+       border: none;
+    }
+  }
+
+
 
 
   /*--------------------------------------------------
   Site-menu
 --------------------------------------------------*/
 .menu-container {
-    position: absolute;
+    position: fixed;
     top: 50px;
     right: 10px;
     background: #FAFAFA;
@@ -127,8 +149,8 @@ header {
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	width: 24px;
-	height: 24px;
+	width: 30px;
+	height: 30px;
 }
 
 .c-site-menu-inner {

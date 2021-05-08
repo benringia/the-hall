@@ -40,6 +40,7 @@ add_action('wp_enqueue_scripts', 'load_stylesheets');
 
     add_theme_support('menus');
     add_theme_support('post-thumbnails');
+    add_theme_support('widgets');
     
 
     register_nav_menus(
@@ -76,4 +77,21 @@ add_action('wp_enqueue_scripts', 'load_stylesheets');
         'header-text'     => false
     ) );
 
+    //Register Side bar
+    function add_side_bar() {
+        register_sidebar(
+            [
+
+                'name' => 'Page Sidebar',
+                'id' => 'page-sidebar',
+                'before_title' => '<h4 class="widget-title">',
+                'after_title' => '</h4>'
+
+            ]
+                
+            
+
+        );
+    }
+    add_action('widgets_init','add_side_bar');
 ?>

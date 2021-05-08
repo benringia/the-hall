@@ -6,4 +6,5 @@
         //add js
         wp_enqueue_script('rc-main-script',plugins_url(). '/rest-countries-custom-plugin/js/main.js');
     }
-?>
+
+    add_action('wp_enqueue_scripts', 'rc_add_scripts');
