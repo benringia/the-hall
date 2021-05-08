@@ -22,38 +22,49 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+
+
     <div class="container">
-        <div class="row mt-4 mb-4">
-            <div class="col-md-6">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="<?php echo get_template_directory_uri(); ?>/images/the-house-section-1.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="card-container">
+        <?php if (have_posts()) : while(have_posts()) : the_post(); ?>
+            
+                <div class="card-parent">
+                    <div>
+                        <?php if(has_post_thumbnail()):?>
+                            <img class="card-img-top img-fluid" src="<?php the_post_thumbnail_url('largest');?>" alt="">
+                        <?php endif; ?>
+                       
+                        <div class="card-body">
+                            <h5 class="card-title"><?php the_title(); ?></h5>
+                            <p class="card-text"> <?php the_excerpt() ?></p>
+                            <a href="<?php the_permalink() ?>" class="btn btn-primary">Go somewhere</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-            <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-                </div>
+            
+        <?php endwhile; endif;?>
+           
         </div>
-            <h1><?php the_title() ?></h1>
-
-
-            <?php if (have_posts()) : while(have_posts()) : the_post(); ?>
-                <?php the_content() ?>
-
-            <?php endwhile; endif;?>
+            
     </div>
 
+  
+
+
+
+
+
+    <!-- <div class="col-md-6">
+                <div class="card w-75" style="width: 18rem;">
+                    <img class="card-img-top" src="<?php echo get_template_directory_uri(); ?>/images/the-house-section-1.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php the_title(); ?></h5>
+                        <p class="card-text"> <?php the_excerpt() ?></p>
+                        <a href="<?php the_permalink() ?>" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div> -->
 </main>
 
 

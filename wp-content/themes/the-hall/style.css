@@ -4,9 +4,12 @@ Author: Ben Ringia
 
 */
 
-@media(min-width: 768px) {
+@media(min-width: 780px) {
     body {
         margin-left: 220px;
+    }
+    .container {
+        margin: 0;
     }
 }
 
@@ -14,6 +17,7 @@ Author: Ben Ringia
     background:#fff;
     height: 100px;
 } */
+
 .logo-container {
     text-align: center;
 }
@@ -31,12 +35,12 @@ header {
     border-right: 1px solid #e6e6e6; 
     padding: 20px 20px;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 780px) {
     header {
       min-height: 100vh;
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 780px) {
     .site-header {
       left: -100%;
       overflow: hidden;
@@ -99,7 +103,7 @@ header {
     display: none;
     z-index: 9;
 }
-@media(max-width: 768px) {
+@media(max-width: 780px) {
     .menu-container {
         display: block;
     }
@@ -176,3 +180,33 @@ header {
 }
   
   
+.card-container {
+    display: flex;
+    justify-content: space-between; 
+    padding: 40px 0;
+    flex-wrap: wrap;
+}
+.card-parent {
+    flex: 0 0 32%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    height: 100%;
+}
+.card-text {
+    font-size: 14px;
+}
+
+@media (max-width: 780px) {
+    .card-parent {
+        flex: 0 0 100%;
+    }
+    .card-container {
+       justify-content: center;
+    }
+    .card-img-top {
+        max-height: 40vh;
+        object-fit: cover;
+        object-position: center;
+    }
+}

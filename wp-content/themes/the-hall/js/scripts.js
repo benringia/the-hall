@@ -1,9 +1,4 @@
-$(document).ready(function () {
-   $('.site-header').click(function() {
-    
 
-   })
-}) 
 
 const siteMenu = document.querySelector('.c-site-menu');
 const navigation = document.querySelector('.site-header');
